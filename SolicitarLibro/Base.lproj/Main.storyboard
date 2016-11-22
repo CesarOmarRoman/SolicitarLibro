@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1pz-sO-lJw">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jPR-TT-0qQ">
+                                <rect key="frame" x="10" y="88" width="349" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ISBN" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="528-zF-cc6">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pNS-er-0ef">
+                                <rect key="frame" x="16" y="66" width="349" height="544"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="528-zF-cc6" firstAttribute="trailing" secondItem="jPR-TT-0qQ" secondAttribute="trailing" id="7Xc-Ka-uuN"/>
+                            <constraint firstItem="1pz-sO-lJw" firstAttribute="baseline" secondItem="528-zF-cc6" secondAttribute="baseline" id="GOb-IS-VrU"/>
+                            <constraint firstItem="jPR-TT-0qQ" firstAttribute="top" secondItem="1pz-sO-lJw" secondAttribute="bottom" constant="30" id="MPN-yM-a0B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jPR-TT-0qQ" secondAttribute="bottom" constant="35" id="WA0-hV-Xf0"/>
+                            <constraint firstItem="1pz-sO-lJw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="f8e-hd-AyH"/>
+                            <constraint firstItem="jPR-TT-0qQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="fAd-C6-zF3"/>
+                            <constraint firstItem="1pz-sO-lJw" firstAttribute="leading" secondItem="528-zF-cc6" secondAttribute="leading" id="nEX-zY-qPc"/>
+                            <constraint firstItem="1pz-sO-lJw" firstAttribute="trailing" secondItem="528-zF-cc6" secondAttribute="trailing" id="rQa-DF-vEX"/>
+                            <constraint firstItem="528-zF-cc6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="t3o-nT-WIq"/>
+                            <constraint firstItem="528-zF-cc6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vYu-Qv-8aV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelText" destination="528-zF-cc6" id="7yF-xd-f18"/>
+                        <outlet property="labelVIew" destination="pNS-er-0ef" id="A1c-mC-65L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
